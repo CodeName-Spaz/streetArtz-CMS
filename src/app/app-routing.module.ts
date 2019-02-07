@@ -4,7 +4,7 @@ import { SignInComponent } from './sign-in/sign-in.component'
 import { LandingComponent } from './landing/landing.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: 'landing', pathMatch: 'full' },
+  { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   {path: 'landing', component: LandingComponent},
 ];
