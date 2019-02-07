@@ -10,6 +10,7 @@ export class LandingComponent implements OnInit {
 
   pending = new Array()
   allPending = new Array();
+  prev;
   constructor() {
     this.getAllpending().then((res: any) => {
       this.allPending = res
@@ -18,13 +19,17 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  showPreview(p){
+    console.log(p);
+    
+    this.prev = this.allPending[p].picUrl
+  }
   getAllpending() {
     return new Promise((pass, fail) => {
       firebase.database().ref("Tempuploads/").on('value', data => {
-        this.allPending.length = 0;
-        this.pending.length = 0;
         if (data.val() != undefined || data.val()! + null) {
+          this.allPending.length = 0;
+          this.pending.length = 0;
           var details = data.val();
           var keys = Object.keys(details)
           for (var x = 0; x < keys.length; x++) {
