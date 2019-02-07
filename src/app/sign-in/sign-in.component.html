@@ -5,11 +5,14 @@
   
   <div class="form">
     <div class="inputs">
-      <input type="email">
+      <input #email type="email" placeholder="Email">
     </div>
+    <br>
     <div class="inputs">
-      <input type="password">
+      <input #password type="password" placeholder="Password">
     </div>
+
+<br>
     <div class="submitter">
       <button class="btn" (click)="login(email.value, password.value)" >
         Sign In
