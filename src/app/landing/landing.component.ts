@@ -12,16 +12,16 @@ export class LandingComponent implements OnInit {
   allPending = new Array();
   prev;
   constructor() {
+ 
+  }
+
+  ngOnInit() {
     this.getAllpending().then((res: any) => {
       this.allPending = res
     })
   }
-
-  ngOnInit() {
-  }
   showPreview(p){
     console.log(p);
-    
     this.prev = this.allPending[p].picUrl
   }
   getAllpending() {
@@ -88,7 +88,6 @@ export class LandingComponent implements OnInit {
       });
       this.decline(key)
     })
-
   }
 
   decline(i) {
