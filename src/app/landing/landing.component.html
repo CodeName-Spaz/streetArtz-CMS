@@ -11,18 +11,40 @@
       Pending Uploads
     </div>
     <div class="content">
-      <div class="userDetails" *ngFor="let i of allPending">
+      <div class="left">
+      <div class="userDetails" *ngFor="let i of allPending; let p = index">
         <img src="{{i.userPic}}" alt="" class="dp">
         <p class="username">{{i.name}}</p>
         <p class="mail">{{i.email}}</p>
         <br>
-        <img src="{{i.picUrl}}" class="imgUpl" alt="">
+        <img src="{{i.picUrl}}" (click)="showPreview(p)" class="imgUpl" alt="">
         <p class="title">{{i.picName}}</p>
         <p class="imgDesc">{{i.picDesc}}
         </p>
-        <button class="accept" (click)="approve(i)">Approve</button>
+        <button class="approve" (click)="approve(i)">Approve</button>
         <button class="decline" (click)="decline(i.key)">Decline</button>
       </div>
+      </div>
+      <div class="preview">
+        <img src="{{prev}}" alt="" class="prevPicture">
+      </div>
+
+
+
+      <!-- real code -->
+      <!-- <div class="userDetails" *ngFor="let i of allPending">
+          <img src="{{i.userPic}}" alt="" class="dp">
+          <p class="username">{{i.name}}</p>
+          <p class="mail">{{i.email}}</p>
+          <br>
+          <img src="{{i.picUrl}}" class="imgUpl" alt="">
+          <p class="title">{{i.picName}}</p>
+          <p class="imgDesc">{{i.picDesc}}
+          </p>
+          <button class="accept" (click)="approve(i)">Approve</button>
+          <button class="decline" (click)="decline(i.key)">Decline</button>
+        </div> -->
+        <!-- end of real code -->
     </div>
   </div>
 </body>
