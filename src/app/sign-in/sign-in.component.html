@@ -1,12 +1,18 @@
 
-<body class="bg">
 
-
-  <div class="main">
-
-
+<body>
+  <div class="image">
+    <img src="../../assets/imgs/ANTZ Logo.png" alt="" class="icon">
+  </div>
 
   <div class="form">
+      <img src="../../assets/imgs/ANTZ Logo.png" alt="" class="icon2"><br>
+    <div class="word">
+      Sign In
+    </div>
+    <div class="instruction">
+      Please enter your login information to sign in.
+    </div>
     <div class="inputs">
       <input #email type="email" placeholder="Email">
     </div>
@@ -15,14 +21,14 @@
       <input #password type="password" placeholder="Password">
     </div>
 
-<!-- <br> -->
+    <br>
     <div class="submitter">
-      <button class="btn" (click)="login(email.value, password.value)" >
+      <button class="btn" (click)="login(email.value, password.value)">
         Sign In
       </button>
     </div>
   </div>
 
 
-</div>
+
 </body>
