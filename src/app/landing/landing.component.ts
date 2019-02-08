@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 declare var firebase;
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-landing',
@@ -10,6 +11,8 @@ export class LandingComponent implements OnInit {
 
   pending = new Array()
   allPending = new Array();
+  textContent;
+  prev;
   constructor() {
     this.getAllpending().then((res: any) => {
       this.allPending = res
@@ -17,6 +20,7 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.showLoader()
   }
 
   getAllpending() {
@@ -57,7 +61,8 @@ export class LandingComponent implements OnInit {
                 comments: com,
                 key: k
               }
-              this.pending.push(obj)
+              this.pending.push(obj);
+              Swal.close()
             })
           }
           pass(this.pending)
@@ -81,13 +86,71 @@ export class LandingComponent implements OnInit {
         likes: 0,
         comments: 0
       });
-      this.decline(key)
+      this.showApprovedAlert(key)
     })
-
   }
 
-  decline(i) {
+  showApprovedAlert(i) {
+    Swal.fire({
+      position: 'top-end',
+      type: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    })
     firebase.database().ref("Tempuploads/" + i).remove()
   }
+  decline(i) {
+    const swalWithBootstrapButtons = Swal.mixin({
+      confirmButtonClass: 'btn btn-success',
+      cancelButtonClass: 'btn btn-danger',
+      buttonsStyling: false,
+    })
 
+    swalWithBootstrapButtons.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: 'green',
+      cancelButtonColor: 'red',
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        swalWithBootstrapButtons.fire(
+          'Deleted!',
+          'the upload has been declined',
+          'success'
+        )
+        firebase.database().ref("Tempuploads/" + i).remove()
+      } else if (
+        // Read more about handling dismissals
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+
+      }
+    })
+
+
+  }
+
+  showLoader() {
+    Swal.fire({
+      title: 'Loading',
+      html: 'Please wait while we retrieve pending uploads.',
+      // timer: 2000,
+      onBeforeOpen: () => {
+        Swal.showLoading()
+      }
+    }).then((result) => {
+
+    })
+  }
+
+  showPreview(p){
+    alert(p);
+    
+  }
 }
