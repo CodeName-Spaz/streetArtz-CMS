@@ -12,7 +12,11 @@
     </div>
     <div class="content">
       <div class="left">
-      <div class="userDetails" *ngFor="let i of allPending; let p = index">
+        <div class="empty" *ngIf="artsPending.length == 0">
+          <img id="myEmpty" src="../../assets/imgs/recycling-512.png" alt="">
+          <h2 id="noneYet">No photos to verify yet...</h2>
+        </div>
+      <div class="userDetails" *ngFor="let i of artsPending; let p = index">
         <img src="{{i.userPic}}" alt="" class="dp">
         <p class="username">{{i.name}}</p>
         <p class="mail">{{i.email}}</p>
@@ -21,8 +25,8 @@
         <p class="title">{{i.picName}}</p>
         <p class="imgDesc">{{i.picDesc}}
         </p>
-        <button class="approve" (click)="approve(i)">Approve</button>
-        <button class="decline" (click)="decline(i.key)">Decline</button>
+        <button class="approve" (click)="approve(i,p)">Approve</button>
+        <button class="decline" (click)="decline(i.key,p)">Decline</button>
       </div>
       </div>
       <div class="preview">
