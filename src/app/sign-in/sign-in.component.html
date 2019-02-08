@@ -1,6 +1,11 @@
 
-<body>
-  
+<body class="bg">
+
+
+  <div class="main">
+
+
+
   <div class="form">
     <div class="inputs">
       <input #email type="email" placeholder="Email">
@@ -10,11 +15,14 @@
       <input #password type="password" placeholder="Password">
     </div>
 
-<br>
+<!-- <br> -->
     <div class="submitter">
       <button class="btn" (click)="login(email.value, password.value)" >
         Sign In
       </button>
     </div>
   </div>
+
+
+</div>
 </body>

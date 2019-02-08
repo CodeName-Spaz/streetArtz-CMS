@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+.bg{
+  background-image:radial-gradient( rgb(0,0,0,0.8),rgb(1,17,39)), url("../../assets/imgs/splash.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200vh;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-self: flex-start;
+    height: 100vh;
+
+/* margin: 50rem 0 0 ; */
+
+}
+.form{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+    background-color: rgb(1,17,39,0.9);
+    height: 50rem;
+    width: 30%;
+}
