@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import swal from 'sweetalert';
 
 declare var firebase;
 
@@ -24,21 +24,23 @@ export class SignInComponent implements OnInit {
 
   login(email, password) {
      if (email == "" || email == undefined && password == "" || password == undefined) {
-       alert("Please check your fields")
+       swal({
+         title:"Please check your fields"
+        })
 
     } else
       if (email == "" || email == undefined) {
-        alert("Please insert your email correectly")
+        swal("Please insert your email correectly")
       }
       else if (password == "" || password == undefined) {
-        alert("Please insert your password correctly")
+        swal("Please insert your password correctly")
       }
       else {
         firebase.auth().signInWithEmailAndPassword(email, password).then(() =>{
             alert("Welcome")
             this.router.navigate(['/landing'])
         }, Error => {
-          alert("something's wrong")
+          swal("something's wrong")
    
 
   })
