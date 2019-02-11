@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
+import Swal from 'sweetalert2'
+declare var swal 
 
 declare var firebase;
 
@@ -24,23 +26,47 @@ export class SignInComponent implements OnInit {
 
   login(email, password) {
      if (email == "" || email == undefined && password == "" || password == undefined) {
-       swal({
-         title:"Please check your fields"
-        })
+      Swal.fire({
+        type: 'warning',
+        title: 'Oops...',
+        text: "You didn't enter your email and password!",
+      })
 
     } else
       if (email == "" || email == undefined) {
-        swal("Please insert your email correectly")
+        Swal.fire({
+          type: 'warning',
+          title: 'Oops...',
+          text: "You didn't enter your email!",
+        })
       }
       else if (password == "" || password == undefined) {
-        swal("Please insert your password correctly")
+        Swal.fire({
+          type: 'warning',
+          title: 'Oops...',
+          text: "You didn't enter your password!",
+        })
       }
       else {
-        firebase.auth().signInWithEmailAndPassword(email, password).then(() =>{
-            alert("Welcome")
+        firebase.auth().signInWithEmailAndPassword(email, password).then(() =>{const Toast = Swal.mixin({
+          toast: true,
+          position: 'center',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        Toast.fire({
+          type: 'success',
+          title: 'Signed in successfully'
+        })
             this.router.navigate(['/landing'])
         }, Error => {
-          swal("something's wrong")
+          
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: Error.message,
+        })
    
 
   })
