@@ -1,8 +1,40 @@
-<head>
-</head>
 
 <body>
-  <div class="image">
+<div class="main">
+<div class="loginform">
+  <h1>Log In</h1>
+  <div class="logo">
+      <img src="../../assets/imgs/ANTZ Logo.png" alt="" class="icon">
+  </div>
+  <div class="inputs">
+    <div class="field1">
+      <i id="con1" class="fas fa-at"></i>
+    <input #email type="text" placeholder="E-mail" >
+  </div>
+ 
+   <div class="field2">
+    <i id="con1" class="fas fa-lock"></i>
+    <input #password type="text" placeholder="Password">
+  </div>
+  </div>
+
+  <div class="butt">
+    <input class="btn" type="submit" (click)="login(email.value, password.value)">
+  </div>
+
+  <div class="fp">
+    <p>Forgot password?</p>
+  </div>
+</div>
+
+
+
+
+
+</div>
+
+
+  <!-- <div class="image">
     <img src="../../assets/imgs/ANTZ Logo.png" alt="" class="icon">
   </div>
 
@@ -28,5 +60,8 @@
         Sign In
       </button>
     </div>
-  </div>
+  </div> -->
+
+
+
 </body>
