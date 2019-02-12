@@ -173,18 +173,15 @@ export class LandingComponent implements OnInit {
         // Read more about handling dismissals
         result.dismiss === Swal.DismissReason.cancel
       ) {
-
       }
     })
-
-
   }
 
   showLoader() {
     Swal.fire({
       title: 'Loading',
       html: 'Please wait while we retrieve pending uploads.',
-      // timer: 2000,
+      timer: 4000,
       onBeforeOpen: () => {
         Swal.showLoading()
       }
