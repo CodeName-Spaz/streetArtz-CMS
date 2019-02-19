@@ -28,7 +28,7 @@ export class SignInComponent implements OnInit {
      if (email == "" || email == undefined && password == "" || password == undefined) {
       Swal.fire({
         type: 'warning',
-        title: 'Oops...',
+        // title: 'Oops...',
         text: "You didn't enter your email and password!",
       })
 
@@ -36,18 +36,19 @@ export class SignInComponent implements OnInit {
       if (email == "" || email == undefined) {
         Swal.fire({
           type: 'warning',
-          title: 'Oops...',
+          // title: 'Oops...',
           text: "You didn't enter your email!",
         })
       }
       else if (password == "" || password == undefined) {
         Swal.fire({
           type: 'warning',
-          title: 'Oops...',
+          // title: 'Oops...',
           text: "You didn't enter your password!",
         })
       }
       else {
+        this.showLoader() 
         firebase.auth().signInWithEmailAndPassword(email, password).then(() =>{const Toast = Swal.mixin({
           toast: true,
           position: 'center',
@@ -64,7 +65,7 @@ export class SignInComponent implements OnInit {
           
         Swal.fire({
           type: 'error',
-          title: 'Oops...',
+          // title: 'Oops...',
           text: Error.message,
         })
    
@@ -72,5 +73,17 @@ export class SignInComponent implements OnInit {
   })
 }
   
+  }
+  showLoader() {
+    Swal.fire({
+      title: 'Loading',
+      html: 'Please wait while we sign you in.',
+      timer: 4000000000000000000,
+      onBeforeOpen: () => {
+        Swal.showLoading()
+      }
+    }).then((result) => {
+
+    })
   }
 }

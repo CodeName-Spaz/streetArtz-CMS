@@ -40,7 +40,8 @@ export class LandingComponent implements OnInit {
               comments: data[x].comments,
               key: data[x].key
             }
-            this.artsPending.push(obj)
+            this.artsPending.push(obj);
+            Swal.close();
           }
         }, 1800);
       })
@@ -181,12 +182,12 @@ export class LandingComponent implements OnInit {
     Swal.fire({
       title: 'Loading',
       html: 'Please wait while we retrieve pending uploads.',
-      timer: 4000,
+      // timer: 4000,
       onBeforeOpen: () => {
         Swal.showLoading()
       }
     }).then((result) => {
-
+      
     })
   }
 

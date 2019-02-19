@@ -1,38 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>StreetArtzCMS</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB6pOe3yLnWgwxG7UADv93MUgm_8S7ipzQ",
+        authDomain: "street-arts.firebaseapp.com",
+        databaseURL: "https://street-arts.firebaseio.com",
+        projectId: "street-arts",
+        storageBucket: "street-arts.appspot.com",
+        messagingSenderId: "326198585168"
+      };
+      firebase.initializeApp(config);
+      var serviceAccount =
+        "../assets/streetarts2019latestbyderik-firebase-adminsdk-psax8-5713e553b7";
+      admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount),
+        databaseURL: "https://streetarts2019latestbyderik.firebaseio.com"
+      });
+    </script>
 
-<head>
-  <meta charset="utf-8">
-  <title>StreetArtzCMS</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAxsIX8mrI7nFs-Shij7vjfXEgm-snp9fc",
-      authDomain: "streetarts2019latestbyderik.firebaseapp.com",
-      databaseURL: "https://streetarts2019latestbyderik.firebaseio.com",
-      projectId: "streetarts2019latestbyderik",
-      storageBucket: "streetarts2019latestbyderik.appspot.com",
-      messagingSenderId: "60147583000"
-    };
-    firebase.initializeApp(config);
-    var serviceAccount = "../assets/streetarts2019latestbyderik-firebase-adminsdk-psax8-5713e553b7";
-  admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://streetarts2019latestbyderik.firebaseio.com"
-});
-  </script>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
-  <app-root></app-root>
-</body>
-
+  <body>
+    <app-root></app-root>
+  </body>
 </html>

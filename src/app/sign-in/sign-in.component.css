@@ -11,6 +11,9 @@ body{
     /* padding: 15px; */
     position: fixed;    
 }
+.fp p{
+    cursor: pointer;
+}
 /* .form{
     transition: 700ms;
     font-family: Arial, Helvetica, sans-serif;
@@ -210,6 +213,7 @@ padding: 1rem;
      /* width: 50%; */
 }
  .btn{
+    cursor: pointer;
     background: transparent;
     /* padding: 1rem; */
     border: none;
