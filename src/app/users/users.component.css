@@ -19,16 +19,17 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: center;
-    height: 150px;
+    height: 130px;
 
 }
 .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    height: 150px;
-    /* overflow: hidden; */
+    width: 10%;
+    height: 10rem;
+    /* background: greenyellow; */
+    overflow: hidden;
 }
 .img{
     height: 10rem;
@@ -39,7 +40,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
+   width: 90%;
     overflow: hidden;
     /* background: pink; */
 }
