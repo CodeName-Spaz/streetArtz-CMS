@@ -4,12 +4,13 @@
     border-radius: 50px;
 }
 body{
-    background: whitesmoke;
-    width: 101vw;
     height: 101vh;
     margin: -10px;
     position: fixed;
     overflow: hidden;
+    background: radial-gradient(rgba(1, 17, 39, 0.514), rgba(31, 41, 54, 0.836)), url("../../assets/imgs/splash.jpg");
+    width: 101vw;
+
 }
 .desc{
     background: rgb(1,17,39);
@@ -20,18 +21,20 @@ body{
     color: white;
     text-align: center;
     height: 150px;
+
 }
 .container{
     transition: 400ms;
     width: 80%;
     height: 85%;
     border: .5px solid rgba(128, 128, 128, 0.164);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.26);
     position: relative;
     left: 50%;
     top: -80px;
     transform: translateX(-50%);
     background: white;
+    border-radius: 1rem;
     overflow: none;
     /* padding: 10px; */
 }
@@ -89,6 +92,7 @@ body{
   }
   .userDetails{
       text-align: center;
+      border-radius: 1rem;
   }
   button{
       width: 45%;
