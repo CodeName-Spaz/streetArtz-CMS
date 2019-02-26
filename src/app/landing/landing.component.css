@@ -183,8 +183,9 @@ body{
     width: 61%;
     margin-top: -10px;
     border: 2px solid grey;
-    box-shadow: 0 0 10px inset black;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.37);
+    box-shadow: 0 0 10px inset rgb(250,179,53);
+    /* box-shadow:0 0 1.5rem rgb(250,179,53); */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.37); */
 }
 @keyframes mymove{
     0%{
