@@ -112,12 +112,14 @@ body{
 }
   .approve{
     background: green;
-    border: 3px solid rgb(250,179,53);
+    border: none;
+    box-shadow:0 0 1.5rem rgb(250,179,53);
     
   }
   .decline{
     background: red;
-    border: 3px solid rgb(250,179,53);
+    border: none;
+    box-shadow:0 0 1.5rem rgb(250,179,53);
     
   }
 
