@@ -1,15 +1,31 @@
+<body>
+  <!-- <div class="w3-container"> -->
+      <div class="desc">
+        <div class="logo">
+          <img class="img" src="../../assets/imgs/ANTZ Logo.png" alt="">
+        </div>
+        <div class="heading">
+            <h2>StreetArtz Content Management System</h2>
+        </div>
+         
+        </div>
+   
+    <div class="main">
 
-<div class="w3-container">
-  <h2>Users List</h2>
-  <p>a list of all the users:</p>
-  <ul class="w3-ul w3-card-4" *ngFor="let i of profiles">
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-      <img src="{{i.img}}" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-      <div class="w3-bar-item">
-        <span class="w3-large">{{i.name}}</span><br>
-        <span>{{i.email}}</span>
-      </div>
-    </li>
-  </ul>
-</div>
+        <!-- <h2>Users List</h2>
+        <p>a list of all the users:</p> -->
+    <div class="container">
+    <ul class="w3-ul w3-card-4" *ngFor="let i of profiles">
+      <li class="w3-bar">
+        <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+        <img src="{{i.img}}" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+        <div class="w3-bar-item">
+          <span class="w3-large">{{i.name}}</span><br>
+          <span>{{i.email}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <!-- </div> -->
+</body>
